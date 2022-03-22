@@ -7,7 +7,7 @@ use warp::{http::Response, Filter};
 async fn main() {
     let example1 = warp::get()
         .and(warp::path("api"))
-        .and(warp::path("HttpExample"))
+        .and(warp::path("Auto-ReQ"))
         .and(warp::query::<HashMap<String, String>>())
         .map(|p: HashMap<String, String>| match p.get("name") {
             Some(name) => Response::builder().body(format!("Hello, {}. This HTTP triggered function executed successfully.", name)),
