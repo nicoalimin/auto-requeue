@@ -15,4 +15,15 @@ Azure Function app to evaluate failed pipeline runs for flaky failures and autom
 Then visit http://localhost:7071/api/Auto-ReQ?name=Foo
 
 ## Deploying
-TODO
+
+1. Build to target linux/x86
+```bash
+rustup target add x86_64-unknown-linux-musl
+cargo build --release --target=x86_64-unknown-linux-musl
+cp target/x86_64-unknown-linux-musl/release/handler .
+```
+2. Publish to Azure
+```
+func azure functionapp publish <FunctionAppName> # TODO find out FunctionAppName!
+```
+3. TODO
