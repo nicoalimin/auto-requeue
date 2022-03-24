@@ -14,7 +14,7 @@
   },
   "customHandler": {
     "description": {
-      "defaultExecutablePath": "",
+      "defaultExecutablePath": "bin/AutoRequeue",
       "workingDirectory": "",
       "arguments": []
     }
