@@ -1,11 +1,11 @@
 #[macro_use] extern crate rocket;
 
-#[get("/hello/<name>/<age>")]
-fn hello(name: &str, age: u8) -> String {
-    format!("Hello, {} year old named {}!", age, name)
-}
+mod routes;
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![hello])
+    rocket::build().mount("/api", routes![
+        routes::handle_health,
+        routes::handle_pipeline_event,
+    ])
 }
