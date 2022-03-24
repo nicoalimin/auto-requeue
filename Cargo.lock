@@ -64,6 +64,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "auto-requeue"
+version = "0.1.0"
+dependencies = [
+ "rocket",
+ "tokio",
+ "warp",
+]
+
+[[package]]
 name = "autocfg"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -445,15 +454,6 @@ dependencies = [
  "tokio",
  "tokio-util",
  "tracing",
-]
-
-[[package]]
-name = "handler"
-version = "0.1.0"
-dependencies = [
- "rocket",
- "tokio",
- "warp",
 ]
 
 [[package]]

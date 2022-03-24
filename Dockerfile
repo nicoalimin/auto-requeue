@@ -1,4 +1,4 @@
-FROM rust:latest AS build-image
+FROM rust:slim AS build-image
 
 WORKDIR /auto-requeue
 ADD . /auto-requeue
@@ -7,5 +7,10 @@ RUN apt update
 
 RUN cargo build --release
 
-EXPOSE 8000
-CMD ["cargo", "run"]
+FROM rust:latest AS final-image
+
+COPY --from=build-image /auto-requeue/target/release/auto-requeue .
+COPY --from=build-image /auto-requeue/Cargo.toml .
+
+EXPOSE 4231
+CMD ["./auto-requeue"]
