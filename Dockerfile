@@ -8,4 +8,4 @@ RUN apt update
 RUN cargo build --release
 
 EXPOSE 8000
-RUN cargo run
+CMD ["cargo", "run"]
