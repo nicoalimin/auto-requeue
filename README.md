@@ -6,6 +6,7 @@ Azure Function app to evaluate failed pipeline runs for flaky failures and autom
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [Rust](https://www.rust-lang.org/tools/install)
 - [Docker](https://www.docker.com/products/docker-desktop/)
+- [openssl & libssl](https://www.openssl.org/source/) (`sudo apt-get install openssl libssl`)
 
 ## Building
 `cargo build --release`

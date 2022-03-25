@@ -1,12 +1,14 @@
 [package]
-name = "handler"
-version = "0.1.0"
+name = "auto-req"
+version = "1.0.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 warp = "0.3"
-tokio = { version = "1", features = ["rt", "macros", "rt-multi-thread"] }
+tokio = { version = "1", features = ["full", "rt", "macros", "rt-multi-thread"] }
 rocket = { version = "0.5.0-rc.1", features = ["json"] }
 serde = { version = "1.0.136", features=["derive"] }
+reqwest = { version = "0.11", features = ["json", "blocking"] }
+base64 = "0.13.0"
